@@ -9,8 +9,8 @@ export default defineConfig({
       federation({
         name: 'host-app',
         remotes: {
-          remoteApp: "http://localhost:5001/assets/remoteEntry.js",
-          newRemoteApp: "http://localhost:5002/assets/remoteEntry.js", // Novo microfrontend
+          remoteApp: "https://teddy-tech-test-app1.vercel.app/assets/remoteEntry.js",
+          newRemoteApp: "https://teddy-tech-test-app2.vercel.app/assets/remoteEntry.js", // Novo microfrontend
         },
         shared: ['react','react-dom']
       })
