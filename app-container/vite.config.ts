@@ -10,8 +10,12 @@ export default defineConfig({
         name: 'host-app',
         remotes: {
           remoteApp: "http://localhost:5001/assets/remoteEntry.js",
+          newRemoteApp: "http://localhost:5002/assets/remoteEntry.js", // Novo microfrontend
         },
         shared: ['react','react-dom']
       })
   ],
+    build: {
+    target: 'esnext', // ou 'es2022' para suporte a top-level await
+  },
 })

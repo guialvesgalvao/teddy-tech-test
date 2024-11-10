@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./app-1
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+
+  app2:
+    build:
+      context: ./app-2
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - app-network
+
+  app-container:
+    build:
+      context: ./app-container
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
+    depends_on:
+      - app1
+      - app2
+
+networks:
+  app-network:
+    driver: bridge

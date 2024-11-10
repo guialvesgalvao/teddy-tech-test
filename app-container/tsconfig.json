@@ -6,6 +6,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    // outras configurações
+    "paths": {
+      "remoteApp/*": ["./types/remoteApp.d.ts"],
+      "newRemoteApp/*": ["./types/newRemoteApp.d.ts"]
+    },
+    
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
