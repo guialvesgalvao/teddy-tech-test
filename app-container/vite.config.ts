@@ -16,6 +16,7 @@ export default defineConfig({
       })
   ],
     build: {
-    target: 'esnext', // ou 'es2022' para suporte a top-level await
+    target: 'esnext',
+    outDir: 'dist', // ou 'es2022' para suporte a top-level await
   },
 })

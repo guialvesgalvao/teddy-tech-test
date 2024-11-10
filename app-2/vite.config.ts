@@ -17,6 +17,7 @@ export default defineConfig({
       })
   ],
   build: {
-    target: 'esnext' // needed to final build
+    target: 'esnext',
+    outDir: 'dist', // needed to final build
   },
 })
