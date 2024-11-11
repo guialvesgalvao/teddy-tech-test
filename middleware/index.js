@@ -13,12 +13,15 @@ const API_URL = 'https://boasorte.teddybackoffice.com.br/users';
 
 app.get('/', async (req, res) => {
   try {
-    const response = await axios.get(`${API_URL}`);
+    const queryParams = req.query;
+    const response = await axios.get(API_URL, { params: queryParams });
+
     res.json(response.data);
   } catch (error) {
     res.status(500).send(error.message);
   }
 });
+
 
 app.get('/:id', async (req, res) => {
   try {
