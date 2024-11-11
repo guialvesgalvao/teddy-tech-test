@@ -8,13 +8,24 @@ export default defineConfig({
       react(),
       federation({
         name: 'host-app',
+        filename: 'remoteEntry.js',
         remotes: {
-          remoteApp: "https://teddy-tech-test-app1.vercel.app/assets/remoteEntry.js",
-          newRemoteApp: "https://teddy-tech-test-app2.vercel.app/assets/remoteEntry.js", // Novo microfrontend
+          remoteApp: "http://localhost:5001/assets/remoteEntry.js",
+          newRemoteApp: "http://localhost:5002/assets/remoteEntry.js", // Novo microfrontend
+          authApp: "http://localhost:5003/assets/remoteEntry.js", // Novo microfrontend
+          customersPanel: "http://localhost:5004/assets/remoteEntry.js", // Novo microfrontend
+        },
+        exposes: {
+          './useUserStore': './src/shared/stores/user-store.ts',
         },
         shared: ['react','react-dom']
       })
   ],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
     build: {
     target: 'esnext',
     outDir: 'dist', // ou 'es2022' para suporte a top-level await
