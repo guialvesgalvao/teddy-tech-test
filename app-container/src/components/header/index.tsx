@@ -34,10 +34,10 @@ export function Header() {
 
       <div className="flex items-center">
         <div className="hidden lg:flex items-center">
-          <span className="mr-2">Olá, <strong>{userName}</strong>!</span>
-          <button 
-          onClick={() => logout()}
-           aria-label="Sign Out">
+          <span className="mr-2">
+            Olá, <strong>{userName}</strong>!
+          </span>
+          <button onClick={() => logout()} aria-label="Sign Out">
             <LogOut size={24} />
           </button>
         </div>

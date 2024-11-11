@@ -1,12 +1,11 @@
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus } from "lucide-react";
 
 interface INumberSelectorProps {
-    limit: number;
-    setLimit: React.Dispatch<React.SetStateAction<number>>
+  limit: number;
+  setLimit: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function NumberSelector({limit, setLimit}: Readonly<INumberSelectorProps>) {
-
+function NumberSelector({ limit, setLimit }: Readonly<INumberSelectorProps>) {
   const handleDecrease = () => {
     if (limit > 1) setLimit(limit - 1);
   };
@@ -17,7 +16,6 @@ function NumberSelector({limit, setLimit}: Readonly<INumberSelectorProps>) {
 
   return (
     <div className="flex items-center space-x-2">
-
       <button
         onClick={handleDecrease}
         className="p-2 bg-gray-200 rounded hover:bg-gray-300"
@@ -36,7 +34,6 @@ function NumberSelector({limit, setLimit}: Readonly<INumberSelectorProps>) {
         min="1"
         max="20"
       />
-
 
       <button
         onClick={handleIncrease}

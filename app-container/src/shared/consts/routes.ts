@@ -1,5 +1,5 @@
-import IconNavOverview from '@/components/icons/icon-nav-overview';
-import { Home, User, LayoutDashboard  } from 'lucide-react';
+import IconNavOverview from "@/components/icons/icon-nav-overview";
+import { Home, User, LayoutDashboard } from "lucide-react";
 
 interface IRoute {
   name: string;
@@ -8,30 +8,29 @@ interface IRoute {
   showInSidebar: boolean;
 }
 
-
 export const ROUTES: IRoute[] = [
   {
-    name: 'Home',
+    name: "Home",
     icon: Home,
-    path: '/',
+    path: "/",
     showInSidebar: true,
   },
   {
-    name: 'Login',
+    name: "Login",
     icon: IconNavOverview,
-    path: '/auth',
+    path: "/auth",
     showInSidebar: false,
   },
   {
-    name: 'Clientes',
+    name: "Clientes",
     icon: User,
-    path: '/customers-selecteds',
+    path: "/customers-selecteds",
     showInSidebar: true,
   },
   {
-    name: 'Produtos',
+    name: "Produtos",
     icon: LayoutDashboard,
-    path: '/products',
+    path: "/products",
     showInSidebar: true,
   },
 ];

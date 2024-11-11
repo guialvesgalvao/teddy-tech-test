@@ -1,10 +1,7 @@
-import { ROUTES } from '@/shared/consts/routes';
-import { useSidebarStore } from '@/shared/stores/sidebar-store';
-import {
-  Sheet,
-  SheetContent,
-} from '@/components/ui/sheet';
-import Logo from '@/assets/image.png';
+import { ROUTES } from "@/shared/consts/routes";
+import { useSidebarStore } from "@/shared/stores/sidebar-store";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
+import Logo from "@/assets/image.png";
 
 export function Sidebar() {
   const { isOpen, toggleSidebar } = useSidebarStore();
@@ -21,7 +18,7 @@ export function Sidebar() {
           {routes.map((route) => (
             <li key={route.path} className="flex items-center mb-4">
               <route.icon />
-              <span className='font-medium ml-4'>{route.name}</span>
+              <span className="font-medium ml-4">{route.name}</span>
             </li>
           ))}
         </ul>

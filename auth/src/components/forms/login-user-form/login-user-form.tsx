@@ -29,17 +29,7 @@ export function LoginUserForm(props: Readonly<ILoginUserFormProps>) {
     resolver: zodResolver(LoginUserSchema),
   });
 
-  const { control, reset, handleSubmit } = form;
-
-  function handleNavigateRegister() {
-    reset();
-    //   navigate(RoutesEnum.REGISTER);
-  }
-
-  function handleNavigateForgotPassword() {
-    reset();
-    //   navigate(RoutesEnum.FORGOT_PASSWORD);
-  }
+  const { control, handleSubmit } = form;
 
   return (
     <Form {...form}>
@@ -81,7 +71,9 @@ export function LoginUserForm(props: Readonly<ILoginUserFormProps>) {
                   <button
                     type="button"
                     className="text-xs underline font-medium bg-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    onClick={handleNavigateForgotPassword}
+                    onClick={() =>
+                      console.log("Você clicou em esqueceu a senha")
+                    }
                   >
                     Esqueceu a senha?
                   </button>
@@ -115,7 +107,10 @@ export function LoginUserForm(props: Readonly<ILoginUserFormProps>) {
           >
             Entrar
           </Button>
-          <Button variant="outline" onClick={handleNavigateRegister}>
+          <Button
+            variant="outline"
+            onClick={() => console.log("Você clicou em criar nova conta")}
+          >
             Criar nova conta
           </Button>
         </div>

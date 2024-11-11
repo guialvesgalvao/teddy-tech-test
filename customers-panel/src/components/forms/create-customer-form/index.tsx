@@ -40,7 +40,6 @@ export function CreateCustomerForm() {
       setCompanyValuation("");
       setIsOpen(false);
 
-      // Exibir o toast de sucesso
       toast.success("O novo cliente foi criado com sucesso.");
     } catch (error) {
       console.error("Erro ao criar cliente:", error);

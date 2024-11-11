@@ -88,102 +88,106 @@ export function CustomerCard({ client, isListedTab }: ICustomerCardProps) {
         <p>Empresa: {formatToReal(companyValuation)}</p>
       </div>
 
-      <div className={`flex flex-row items-center ${isListedTab ? 'justify-between' : 'justify-end'}` }>
-      {isListedTab && (
-        <button
-          onClick={handleAddCustomer}
-          className="p-2 bg-gray-200 rounded hover:bg-gray-300"
-        >
-          <Plus size={16} />
-        </button>
-      )}
+      <div
+        className={`flex flex-row items-center ${
+          isListedTab ? "justify-between" : "justify-end"
+        }`}
+      >
+        {isListedTab && (
+          <button
+            onClick={handleAddCustomer}
+            className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            <Plus size={16} />
+          </button>
+        )}
 
-      {isListedTab && (
-        <Dialog open={isEditing} onOpenChange={setIsEditing}>
-          <DialogTrigger asChild>
-            <button className="p-2 bg-gray-200 rounded hover:bg-gray-300">
-              <Edit3 size={16} />
-            </button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Editar Cliente</DialogTitle>
-            </DialogHeader>
-            <div className="space-y-4">
-              <Input
-                value={editName}
-                onChange={(e) => setEditName(e.target.value)}
-                placeholder="Name"
-              />
-              <Input
-                type="number"
-                value={editSalary}
-                onChange={(e) => setEditSalary(Number(e.target.value))}
-                placeholder="Salary"
-              />
-              <Input
-                type="number"
-                value={editValuation}
-                onChange={(e) => setEditValuation(Number(e.target.value))}
-                placeholder="Company Valuation"
-              />
-            </div>
-            <DialogFooter>
-              <Button
-                style={{ backgroundColor: "#d26f39" }}
-                onClick={handleEditCustomer}
-              >
-                Salvar
-              </Button>
-              <Button variant="outline" onClick={() => setIsEditing(false)}>
-                Cancelar
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      )}
+        {isListedTab && (
+          <Dialog open={isEditing} onOpenChange={setIsEditing}>
+            <DialogTrigger asChild>
+              <button className="p-2 bg-gray-200 rounded hover:bg-gray-300">
+                <Edit3 size={16} />
+              </button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Editar Cliente</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4">
+                <Input
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  placeholder="Name"
+                />
+                <Input
+                  type="number"
+                  value={editSalary}
+                  onChange={(e) => setEditSalary(Number(e.target.value))}
+                  placeholder="Salary"
+                />
+                <Input
+                  type="number"
+                  value={editValuation}
+                  onChange={(e) => setEditValuation(Number(e.target.value))}
+                  placeholder="Company Valuation"
+                />
+              </div>
+              <DialogFooter>
+                <Button
+                  style={{ backgroundColor: "#d26f39" }}
+                  onClick={handleEditCustomer}
+                >
+                  Salvar
+                </Button>
+                <Button variant="outline" onClick={() => setIsEditing(false)}>
+                  Cancelar
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        )}
 
-      {isListedTab && (
-        <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
-          <DialogTrigger asChild>
-            <button className="p-2 bg-gray-200 rounded hover:bg-gray-300">
-              <Trash2 size={16} color="#d26f39" />
-            </button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Confirmar Exclusão</DialogTitle>
-            </DialogHeader>
-            <p>
-              Você está prestes a excluir o cliente: <strong>{name}</strong>
-            </p>
-            <DialogFooter>
-              <Button
-                style={{ backgroundColor: "#d26f39" }}
-                variant="destructive"
-                onClick={handleDeleteCustomer}
-              >
-                Excluir Cliente
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => setShowDeleteDialog(false)}
-              >
-                Cancelar
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      )}
+        {isListedTab && (
+          <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+            <DialogTrigger asChild>
+              <button className="p-2 bg-gray-200 rounded hover:bg-gray-300">
+                <Trash2 size={16} color="#d26f39" />
+              </button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Confirmar Exclusão</DialogTitle>
+              </DialogHeader>
+              <p>
+                Você está prestes a excluir o cliente: <strong>{name}</strong>
+              </p>
+              <DialogFooter>
+                <Button
+                  style={{ backgroundColor: "#d26f39" }}
+                  variant="destructive"
+                  onClick={handleDeleteCustomer}
+                >
+                  Excluir Cliente
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => setShowDeleteDialog(false)}
+                >
+                  Cancelar
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        )}
 
-      {!isListedTab && (
-        <button
-          onClick={handleDecreaseState}
-          className="p-2 bg-gray-200 rounded hover:bg-gray-300"
-        >
-          <Minus size={16} className="text-gray-700" />
-        </button>
-      )}
+        {!isListedTab && (
+          <button
+            onClick={handleDecreaseState}
+            className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            <Minus size={16} className="text-gray-700" />
+          </button>
+        )}
       </div>
     </div>
   );

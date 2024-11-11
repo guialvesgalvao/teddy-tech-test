@@ -23,7 +23,7 @@ function CustomerList() {
   const gridClasses = "grid gap-4";
   const responsiveGrid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
 
-  if (error) return <div>Error atualize a aplicação</div>;
+  if (error) return <div>Error, atualize a aplicação</div>;
 
   return (
     <div className="container mx-auto p-4 max-h-screen overflow-y-auto">
@@ -35,7 +35,6 @@ function CustomerList() {
           <TabsTrigger value="selected">Clientes Selecionados</TabsTrigger>
         </TabsList>
 
-        {/* Conteúdo da Aba de Clientes */}
         <TabsContent value="clients">
           <div className={`${gridClasses} ${responsiveGrid}`}>
             {isLoading
@@ -55,10 +54,8 @@ function CustomerList() {
               onPageChange={(newPage) => setPage(newPage)}
             />
           )}
-          {/* Botão para criar novo cliente */}
         </TabsContent>
 
-        {/* Conteúdo da Aba de Clientes Selecionados */}
         <TabsContent value="selected">
           {customersSelected.length === 0 ? (
             <div className="text-center p-4">Nenhum cliente selecionado</div>
