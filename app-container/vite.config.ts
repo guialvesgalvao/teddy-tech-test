@@ -10,8 +10,8 @@ export default defineConfig({
         name: 'host-app',
         filename: 'remoteEntry.js',
         remotes: {
-          authApp: "http://localhost:5003/assets/remoteEntry.js", // Novo microfrontend
-          customersPanel: "http://localhost:5004/assets/remoteEntry.js", // Novo microfrontend
+          authApp: "https://teddy-tech-test-auth.vercel.app/assets/remoteEntry.js",
+          customersPanel: "https://teddy-tech-test-customers-panel.vercel.app/assets/remoteEntry.js", 
         },
         exposes: {
           './useUserStore': './src/shared/stores/user-store.ts',
@@ -26,6 +26,6 @@ export default defineConfig({
   },
     build: {
     target: 'esnext',
-    outDir: 'dist', // ou 'es2022' para suporte a top-level await
+    outDir: 'dist',
   },
 })
