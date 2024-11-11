@@ -11,8 +11,6 @@
       "@/*": [
         "./src/*"
       ],
-      "remoteApp/*": ["./types/remoteApp.d.ts"],
-      "newRemoteApp/*": ["./types/newRemoteApp.d.ts"],
       "authApp/*": ["./types/authApp.d.ts"],
       "customersPanel/*": ["./types/customersPanel.d.ts"]
     },

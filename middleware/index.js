@@ -8,7 +8,6 @@ app.use(express.json());
 
 const PORT = 3000;
 
-// URL da API original
 const API_URL = 'https://boasorte.teddybackoffice.com.br/users';
 
 app.get('/', async (req, res) => {

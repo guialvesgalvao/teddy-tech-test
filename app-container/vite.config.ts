@@ -10,8 +10,6 @@ export default defineConfig({
         name: 'host-app',
         filename: 'remoteEntry.js',
         remotes: {
-          remoteApp: "http://localhost:5001/assets/remoteEntry.js",
-          newRemoteApp: "http://localhost:5002/assets/remoteEntry.js", // Novo microfrontend
           authApp: "http://localhost:5003/assets/remoteEntry.js", // Novo microfrontend
           customersPanel: "http://localhost:5004/assets/remoteEntry.js", // Novo microfrontend
         },
