@@ -26,7 +26,7 @@ function CustomerList() {
   if (error) return <div>Error, atualize a aplicação</div>;
 
   return (
-    <div className="container mx-auto p-4 max-h-screen overflow-y-auto">
+    <div className="container mx-auto p-4 max-h-screen ">
       <QuantityManager limit={limit} setLimit={setLimit} clients={data?.clients || []} />
 
       <Tabs defaultValue="clients">
