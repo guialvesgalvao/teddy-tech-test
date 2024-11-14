@@ -1,4 +1,3 @@
-"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { LogoMark } from "@/components/logo-mark/logo-mark";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";

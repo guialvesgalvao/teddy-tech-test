@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Auth from "authApp/Auth";
 import CustomersPanel from "customersPanel/CustomersPanel";
-import { Sidebar } from "./components/sidebar/sidebar";
-import { Header } from "./components/header";
+import { Sidebar } from "./components/sidebar";
+import { Header } from "./components/header/header";
 import { getUserCookie } from "./shared/helpers/getUserCookie";
 import { useUserStore } from "./shared/stores/user-store";
 
