@@ -7,7 +7,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico de Desenvolvedor
 - **Construção e Deploy**: Docker, Docker Compose
 - **Backend Middleware**: Node.js, com um middleware desenvolvido para resolver problemas de CORS
 - **Hospedagem**: Vercel (frontend) e Railway (API middleware)
-
+- **Testes**: Vitest/React-testing-library
 # ⚙️ Setup do Projeto
 **1. Pré-requisitos**
 Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente de desenvolvimento:
@@ -45,6 +45,10 @@ Após a execução, acesse o projeto em http://localhost:5173.
 3. **Customers Panel**: Módulo que gerencia a listagem de clientes e permite edição e exclusão.
  
  Todos os módulos foram desenvolvidos com Vite, React, TypeScript e configurados com Module Federation para integração.
+
+# 🧪 Testes
+ Foi implementando testes no projeto utilizando **Vitest** e **React-testing-library**, é possível executar estes com o comando ```npm run test``` em cada módulo.
+
 
 # 📋 Funcionalidades
 - **Login**:
