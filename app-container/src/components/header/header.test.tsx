@@ -18,17 +18,18 @@ vi.mock("@/shared/helpers/deleteUserCookie");
 describe("Testes no Componente de Cabeçalho", () => {
   const mockToggleSidebar = vi.fn();
   const mockSetUserName = vi.fn();
+  //@ts-ignore
   const mockDeleteUserCookie = deleteUserCookie as vi.Mock;
 
   beforeEach(() => {
     mockToggleSidebar.mockClear();
     mockSetUserName.mockClear();
     mockDeleteUserCookie.mockClear();
-
+    //@ts-ignore
     (useSidebarStore as vi.Mock).mockReturnValue({
       toggleSidebar: mockToggleSidebar,
     });
-
+    //@ts-ignore
     (useUserStore as vi.Mock).mockReturnValue({
       userName: "Test User",
       setUserName: mockSetUserName,
@@ -44,6 +45,7 @@ describe("Testes no Componente de Cabeçalho", () => {
   });
 
   it("deve renderizar a saudação corretamente quando userName for nulo", () => {
+    //@ts-ignore
     (useUserStore as vi.Mock).mockReturnValue({
       userName: null,
       setUserName: mockSetUserName,
